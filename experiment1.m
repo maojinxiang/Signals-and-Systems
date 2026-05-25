@@ -1,0 +1,20 @@
+clc,clear all;
+dt = 0.001;
+t1=-3:dt:3;t2=-1:dt:4;
+f1=2.*(t1>=-1&t1<=2);f2=(3.0/4).*(t2>=0&t2<=3);
+f1_conv_f2=conv(f1,f2);
+f=f1_conv_f2.*dt;
+t=-4:dt:7;
+subplot(3,1,1);
+plot(t1,f1,Color='r');
+set(gca,'xtick',[-1:2]);
+title('f1图像');
+subplot(3,1,2)
+plot(t2,f2,Color='b');
+set(gca,'xtick',[0:3]);
+title('f2图像');
+subplot(3,1,3)
+plot(t,f,Color='g');
+set(gca,'xtick',[-1:5]);
+title('f1*f2图像');
+
